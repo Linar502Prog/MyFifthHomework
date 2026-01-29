@@ -1,25 +1,35 @@
-#include <iostream>
+#include<iostream>
 
-int main() {
-
-    setlocale(LC_ALL, "RUS");
-    std::string gender, zadiacSign;
-    int age;
-    std::cout << "Введите пол: ";
-    std::cin >> gender;
-    std::cout << "Введите знак задиака: ";
-    std::cin >> zadiacSign;
-    std::cout << "Введите возраст: ";
-    std::cin >> age;
-    if (gender == "м" && (zadiacSign == "рак"  || zadiacSign == "скорпион" || zadiacSign == "рыбы") && age < 40) {
-        std::cout << "Сегодня очень плодотворный день. Можно добиться того, что прежде казалось почти невозможным." << std::endl;
+int main(){
+    setlocale(LC_ALL,"RUS");
+    const int rows{3};
+    const int columns{6};
+    int arr[rows][columns]{
+        {1,  5, 6, 7, 8, 9},
+        {11,34,80,50,43,21},
+        {3, 15,42,33,12,17}
+    };
+    int minn_i{0},minn_j{0},maxx_i{0},maxx_j{0};
+    int minn{arr[0][0]},maxx{arr[0][0]};
+    std::cout<<"РњР°СЃСЃРёРІ"<<std::endl;
+    for(int i = 0; i<rows;++i){
+        for(int j = 0; j<columns;++j){
+            std::cout<<arr[i][j]<<'\t';
+            if(arr[i][j]<minn){
+                minn_i=i;
+                minn_j=j;
+                minn=arr[minn_i][minn_j];
+            }
+            if(arr[i][j]>maxx){
+                maxx_i=i;
+                maxx_j=j;
+                maxx=arr[maxx_i][maxx_j];
+            }
+        }
+        std::cout<<std::endl;
     }
-    else if (gender == "ж" && 15 <= age && age <= 30 && (zadiacSign == "телец" ||  zadiacSign == "дева" || zadiacSign == "козерог")) {
-        std::cout << "Сегодняшний вечер подходит для общения с друзьями, проведения домашних праздников и импровизированных вечеринок.\n Будет не только весело, но и интересно: найдётся дело, которое увлечёт всех." << std::endl;
-    }
-    else {
-        std::cout << "Гороскоп для вас находится в разработке. Приходите чуточку позже ;)" << std::endl;
-    }
-
+    std::cout<<std::endl;
+    std::cout<<"РРЅРґРµРєСЃ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°: "<<minn_i<<"\t"<<minn_j<<std::endl;
+    std::cout<<"РРЅРґРµРєСЃ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°: "<<maxx_i<<"\t"<<maxx_j<<std::endl;
     return EXIT_SUCCESS;
 }
