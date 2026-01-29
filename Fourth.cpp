@@ -1,71 +1,30 @@
-#include <iostream>
+#include<iostream>
 #include<Windows.h>
 
-int main() {
+int main(){
     SetConsoleOutputCP(1251);
     SetConsoleCP(1251);
-    int number1{}, number2{};
-    int des1, jig1, des2, jig2;
-    std::string jigit[]{"ноль","один", "два", "три", "четыре", "пять","шесть","семь","восемь","девять","десять", "одиннадцать","двенадцать", "тринадцать",
-        "четырнадцать", "пятнадцать", "шестнадцать","семнадцать","восемнадцать", "девятнадцать", "двадцать" };
-    std::string desyat[]{ "", "","двадцать","тридцать","сорок", "пятьдесят", "шестьдесят", "семьдесят", "восемьдесят","девяносто" };
-    std::cout << "Введите целое число: ";
-    std::cin >> number1;
-    std::cout << "Введите целое число: ";
-    std::cin >> number2;
+    int arr[10]{10,3,4,1,8,9,7,2,6,5};
+    std::cout<<"РњР°СЃСЃРёРІ РґРѕ СЃРѕСЂС‚РёСЂРѕРІРєРё: ";
+    for(int a = 0; a<10; ++a){
+        std::cout<<arr[a]<<" ";
+    }
     std::cout<<std::endl;
-    des1 = abs(number1) / 10;
-    jig1 = abs(number1) % 10;
-    des2 = abs(number2) / 10;
-    jig2 = abs(number2) % 10;
-    if (number1 > 99 || number1 < -99 || number2>99 || number2 < -99) {
-        std::cout << "Ошибка! Одно из чисел вне диапазона" << std::endl;
-        return 0;
-    }
-    if (abs(number1) >= 10 && abs(number1) <= 20) {
-        des1 = 0;
-        jig1 = abs(number1);
-    }
-    if (abs(number2) >= 10 && abs(number2) <= 20) {
-        des2 = 0;
-        jig2 = abs(number2);
-    }
-    //первый случай положительных
-    if (number1 >= 0 && number2 >= 0) {
-        if (number1 > number2) {
-            std::cout <<desyat[des1]  << jigit[jig1] << " больше чем " << desyat[des2] << " " << jigit[jig2] << std::endl;
-        }
-        else if (number1 < number2) {
-            std::cout << desyat[des1]  << jigit[jig1] << " меньше чем " << desyat[des2] << " " << jigit[jig2] << std::endl;
-        }
-        else {
-            std::cout << desyat[des1]  << jigit[jig1] << " равно " << desyat[des2] << " " << jigit[jig2] << std::endl;
-        }
-
-    }
-    else if (number1 < 0 && number2 >= 0) {
-        if (number1 < number2) {
-            std::cout << "минус " << desyat[des1] << " " << jigit[jig1] << " меньше чем " << desyat[des2] << " " << jigit[jig2] << std::endl;
-        }
-
-    }
-    else if (number1 >= 0 && number2 < 0) {
-        if (number1 > number2) {
-            std::cout << desyat[des1] << " " << jigit[jig1] << " больше чем " << " минус" << desyat[des2] << " " << jigit[jig2] << std::endl;
+    for(int i = 8; i>=0;--i){
+        for(int j = 9; j>0;--j ){
+            int rezerv=arr[i];
+            if(arr[i]<arr[j]){
+                arr[i]=arr[j];
+                arr[j]=rezerv;
+            }
+            
         }
     }
-    else if (number1 < 0 && number2 < 0) {
-        if (number1 > number2) {
-            std::cout << "минус " << desyat[des1] << " " << jigit[jig1] << " больше чем " << " минус" << desyat[des2] << " " << jigit[jig2] << std::endl;
-        }
-        else if (number1 < number2) {
-            std::cout << "минус " << desyat[des1] << " " << jigit[jig1] << " меньше чем " << " минус" << desyat[des2] << " " << jigit[jig2] << std::endl;
-        }
-        else {
-            std::cout << "минус " << desyat[des1] << " " << jigit[jig1] << " равно " << " минус" << desyat[des2] << " " << jigit[jig2] << std::endl;
-        }
+    std::cout<<"РњР°СЃСЃРёРІ РїРѕСЃР»Рµ СЃРѕСЂС‚РёСЂРѕРІРєРё: ";
+    for(int b = 0; b<10; ++b){
+        std::cout<<arr[b]<<" ";
     }
-
-
-    return EXIT_SUCCESS;
+    std::cout<<std::endl;
+    return EXIT_SUCCESS:
+    
 }
