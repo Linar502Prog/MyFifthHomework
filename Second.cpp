@@ -1,20 +1,22 @@
-#include <iostream>
-#include <Windows.h>
+#include<iostream>
 
-int main() {
-    SetConsoleOutputCP(1251);
-    SetConsoleCP(1251);
-    int number1{}, number2{}, number3{};
-    std::cout << "Ââåäèòå ïåğâîå ÷èñëî: ";
-    std::cin >> number1;
-    std::cout << "Ââåäèòå âòîğîå ÷èñëî: ";
-    std::cin >> number2;
-    std::cout << "Ââåäèòå òğåòüå ÷èñëî: ";
-    std::cin >> number3;
-    int maxnum = (number1 > number2) ? ((number1 > number3) ? number1 : number3) : ((number2 > number3) ? number2 : number3);
-    int minnum = number1 < number2 ? number1 < number3 ? number1 : number3 : number2 < number3 ? number2 : number3;
-    int srnum = number1 + number2 + number3 - minnum - maxnum;
-    std::cout << "Ğåçóëüòàò: " << maxnum << " " << srnum << " " << minnum << std::endl;
-
+int main(){
+    int arr[10]{1,3,15,6,7,8,90,2,4,10};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    int minn{arr[0]},maxx{arr[0]};
+    std::cout<<"ĞœĞ°ÑÑĞ¸Ğ²: ";
+    for(int i = 0;i<size-1;++i){
+        std::cout<<i<<',';
+        if(arr[i]<minn){
+            minn=arr[i];
+        }
+        if(arr[i]>maxx){
+            maxx=arr[i];
+        }
+    }
+    std::cout<<arr[size-1]<<std::endl;
+    std::cout<<"ĞœĞ¸Ğ½Ğ¸Ğ¼ÑƒĞ¼: "<<minn<<std::endl;
+    std::cout<<"ĞœĞ°ĞºÑĞ¸Ğ¼ÑƒĞ¼: "<<maxx<<std::endl;
+    
     return EXIT_SUCCESS;
 }
