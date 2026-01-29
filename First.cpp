@@ -1,19 +1,10 @@
-#include <iostream>
+#include<iostream>
 
-int main() {
-    setlocale(LC_ALL, "RUS");
-    bool first{ 1 }, second{ 1 };
-    std::cout << std::boolalpha;
-    std::cout << "Оператор: ||" << std::endl;
-    std::cout << first << " " << second << " " << (first || second) << std::endl;
-    std::cout << !first << " " << second << " " << (!first || second) << std::endl;
-    std::cout << first << " " << !second << " " << (first || !second) << std::endl;
-    std::cout << !first << " " << !second << " " << (!first || !second) << std::endl << std::endl;
-    std::cout << "Оператор: &&" << std::endl;
-    std::cout << first << " " << second << " " << (first && second) << std::endl;
-    std::cout << !first << " " << second << " " << (!first && second) << std::endl;
-    std::cout << first << " " << !second << " " << (first && !second) << std::endl;
-    std::cout << !first << " " << !second << " " << (!first && !second) << std::endl;
-
+int main(){
+    int arr[10]{1,2,3,4,5,6,7,8,9,10};
+    for(int i = 0;i<9;++i){
+        std::cout<<arr[i]<<',';
+    }
+    std::cout<<arr[9]<<std::endl;
     return EXIT_SUCCESS;
 }
