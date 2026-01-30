@@ -8,8 +8,10 @@ int main(){
     int size = sizeof(arr)/sizeof(arr[0]);
     int minn{arr[0]},maxx{arr[0]};
     std::cout<<"Массив: ";
-    for(int i = 0;i<size-1;++i){
-        std::cout<<arr[i]<<',';
+    for(int i = 0;i<size;++i){
+        std::cout<<arr[i];
+        if(i!=size-1){
+        std::cout<<',';}
         if(arr[i]<minn){
             minn=arr[i];
         }
@@ -17,11 +19,10 @@ int main(){
             maxx=arr[i];
         }
     }
-    std::cout<<arr[size-1]<<std::endl;
+    std::cout<<std::endl;
     std::cout<<"Минимум: "<<minn<<std::endl;
     std::cout<<"Максимум: "<<maxx<<std::endl;
     
     return EXIT_SUCCESS;
 }
-
 
