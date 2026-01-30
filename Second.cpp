@@ -9,7 +9,7 @@ int main(){
     int minn{arr[0]},maxx{arr[0]};
     std::cout<<"Массив: ";
     for(int i = 0;i<size-1;++i){
-        std::cout<<i<<',';
+        std::cout<<arr[i]<<',';
         if(arr[i]<minn){
             minn=arr[i];
         }
@@ -23,4 +23,5 @@ int main(){
     
     return EXIT_SUCCESS;
 }
+
 
